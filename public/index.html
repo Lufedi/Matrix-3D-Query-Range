@@ -1,11 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
+<!doctype html>
+<html lang="en" ng-app="SumRangeQuery">
 <head>
-    <meta charset="UTF-8">
-    <title>bienvenidos</title>
+    <title>Sum Range Query 3D Matrix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <style>
+        .emptyMessage {
+            font-weight: bold;
+            color: red;
+            font-size: 1.2em;
+        }
+        li {
+            margin-bottom: 7px;
+            font-size: 1.2em;
+        }
+
+        li > button {
+
+            margin-left: 6px;
+        }
+        button > span {
+            color: green;
+        }
+    </style>
+
+    <script src="javascripts/angular.min.js"></script>
+    <script src="javascripts/app.js"></script>
+
+
 </head>
 <body>
-hola nodemon works
+<div class="container" ng-controller="CtrlMatrixesList " >
+    <h1>Sum Range Query 3D Matrix</h1>
+
+    <div class="row">
+
+
+        <!-- To Buy List -->
+        <div class="col-md-8" >
+
+
+            <label for="user"> User: <input class="form-control" ng-model="user" id="user"> </label>
+            <label for="createX">N: <input class="form-control" ng-model="x" id="createX"> </label>
+
+            <button class="btn btn-default" ng-click="createMatrix()"><span class="glyphicon glyphicon-ok"></span> Create</button></br>
+
+
+
+            <h2>List of Matrixes</h2>
+            <ul >
+
+                <li ng-repeat=" matrix in matrixes" >
+                    User: {{matrix.user}} , Dimensions X:{{matrix.x}}  Y:{{matrix.y}}  Z:{{matrix.z}}
+                    <button class="btn btn-default" ng-click="selectedMatrix(matrix)"><span class="glyphicon glyphicon-hand-down"></span> Select</button>
+
+                </li>
+
+
+
+            </ul>
+            <div ng-if="ToBuyController.items.length == 0" class="emptyMessage">Everything is bought!</div>
+        </div>
+
+        <!-- Already Bought List -->
+
+    </div>
+
+    <div class="row">
+
+
+        <div class="row">
+            <h2>Selected Matrix: {{selected_user}} </h2>
+           <span  class="emptyMessage">Log: {{message}}</span>
+        </div>
+        <div class="row">
+            <div class="col-md-6"   >
+
+                <h3>Update:</h3>
+                <button class="btn btn-default" ng-click="updateValue()"><span class="glyphicon glyphicon-upload"></span> Update</button>
+                <div>
+
+                    X: <input class="form-control" ng-model="selected_x">
+                    Y: <input class="form-control" ng-model="selected_y">
+                    Z: <input class="form-control" ng-model="selected_z">
+                    Value: <input class="form-control" ng-model="selected_value">
+                </div>
+
+
+            </div>
+
+            <div class="col-md-6"   >
+                <h3>Query:</h3>
+                <button class="btn btn-default" ng-click="querySum()"><span class="glyphicon glyphicon-question-sign"></span> Query</button>
+                <div>
+                    X1: <input class="form-control" ng-model="q_x1">
+                    Y1: <input class="form-control" ng-model="q_y1">
+                    Z1: <input class="form-control" ng-model="q_z1">
+                    X2: <input class="form-control" ng-model="q_x2">
+                    Y2: <input class="form-control" ng-model="q_y2">
+                    Z2: <input class="form-control" ng-model="q_z2">
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
