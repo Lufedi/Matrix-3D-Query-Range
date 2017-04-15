@@ -4,7 +4,7 @@ felipe-diaz-back
 Cube Sum Range Query webapp problem for Rappi interview process
 
 ---
-For run the project use
+run the project using
 ```javascript
 npm start
 
