@@ -1,7 +1,12 @@
-# felipe-diaz-back
-felipe-diaz-back
+# Matrix 3D Query Range
 
-Cube Sum Range Query webapp problem for Rappi interview process
+
+Cube Sum Range Query webapp problem 
+
+Technologies uded
+Backend: Nodejs - microservices 
+FrontEnd: Angular 1
+Database: Mongodb - Mongolab
 
 ---
 run the project using
